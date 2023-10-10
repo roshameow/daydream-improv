@@ -79,8 +79,10 @@ import SupportIcon from "../icons/IconSupport.vue";
           <li> 第三轮：两人试图引用，或者反驳对方观点</li>
         </ul>
           </li>
-        <li>Gibberish - Past Incident(火星语聊往事)：给出一个主题，交替用火星语和中文对话，过程中主持人会随时翻牌切换语言。
-        <br /></li>
+        <li>Gibberish - Past Incident(火星语聊往事)：两人用火星语聊天，讲述者用火星语讲述一段往事，对话者用中文将其重述给观众。
+     </li>
+        <li>Gibberish - Chinese(双语聊天)：给出一个主题，交替用火星语和中文对话，过程中主持人会随时翻牌切换语言。
+     </li>
       </ul>
 
       </p>
@@ -97,3 +99,5 @@ import SupportIcon from "../icons/IconSupport.vue";
     </ActivityItem>
   </main>
 </template>
+
+<style src="./activity_template.css"></style>
