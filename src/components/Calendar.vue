@@ -1,11 +1,15 @@
 <template>
   <div class="calendar">
     <div class="header">
-      <span class="month">{{ englishMonth[month] }}</span>
-      <span class="year">{{ year }}</span>
-      <button @click="prevMonth">&lt;</button>
-      <button @click="returnCurrentMonth">today</button>
-      <button @click="nextMonth">&gt;</button>
+      <div>
+        <span class="month">{{ englishMonth[month] }}&nbsp;</span>
+        <span class="year">{{ year }}</span>
+      </div>
+      <div>
+        <button @click="prevMonth">&lt;</button>
+        <button @click="returnCurrentMonth">&nbsp;today&nbsp;</button>
+        <button @click="nextMonth">&gt;</button>
+      </div>
     </div>
     <table>
       <thead>
@@ -23,7 +27,7 @@
               hide: notThisMonth(day_object),
               hovereffect: !notThisMonth(day_object),
               active: isSelectedDay(day_object),
-
+              noted: isNotedDay(day_object),
             }"
             @click="selectDate(day_object)"
           >
@@ -88,9 +92,15 @@ export default {
             day = 1;
             isInCurrentMonth = !isInCurrentMonth;
           }
+          const formattedDate = `/${this.year}-${this.month + 1}-${day}`;
+          // Check if the route exists
+          const routeExists = this.$router.options.routes.some((route) => {
+            return route.path === formattedDate;
+          });
           week.push({
             day: day,
             isInCurrentMonth: isInCurrentMonth,
+            isNoted: routeExists,
           });
           day++;
         }
@@ -144,9 +154,26 @@ export default {
         selectedDate.getTime() === this.selectedDate.getTime()
       );
     },
+    isNotedDay(day_object) {
+      const formattedDate = `/${this.year}-${this.month + 1}-${day_object.day}`;
+      // Check if the route exists
+      const routeExists = this.$router.options.routes.some((route) => {
+        return route.path === formattedDate;
+      });
+      return day_object.isNoted && day_object.isInCurrentMonth;
+    },
     selectDate(day_object) {
       if (day_object.isInCurrentMonth) {
         this.selectedDate = new Date(this.year, this.month, day_object.day);
+        this.$router.push("/noactivity"); // Navigate to the specified route
+        const formattedDate = `/${this.year}-${this.month + 1}-${day_object.day}`;
+        if(day_object.isNoted) {
+          this.$router.push(formattedDate); // Navigate to the specified route
+        } else {
+          // console.error("Error navigating to the specified route:", error);
+          this.$router.push("/noactivity"); // Navigate to the specified route
+          // Optionally handle the error, e.g., show a user-friendly message
+        }
       }
     },
   },
@@ -168,7 +195,6 @@ export default {
 }
 .month {
   font-weight: bold; /* Optionally, make the month text bold */
-  margin-right: -30px; /* Add margin to separate the month and year */
 }
 .year {
   color: #2196f3;
@@ -199,6 +225,16 @@ table td.today {
   color: #2196f3;
 }
 
+table td.noted::after {
+  content: "\00B7"; /* Unicode character for middle dot */
+  position: absolute; /* Position the dot absolutely */
+  bottom: -28px; /* Adjust the position to place the dot under the text */
+  left: 50%; /* Center the dot under the text */
+  transform: translateX(-50%); /* Center the dot precisely under the text */
+  font-size: 3.5em; /* Adjust the font size to make the dot bigger */
+  color: #2196f3; /* Applying the decent green color to an element */
+}
+
 table td.hide {
   color: #cccccc;
 }
@@ -212,5 +248,11 @@ table td.active {
   background-color: #2196f3;
   border-radius: 15px; /* Adjust the border-radius to control the roundness of corners */
   color: #fff;
+}
+
+table td.noted {
+  position: relative; /* Make the span position relative */
+  /* background-color: lightgreen; */
+  /* color: #fff; */
 }
 </style>

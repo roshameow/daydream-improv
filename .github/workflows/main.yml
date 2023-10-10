@@ -24,9 +24,9 @@ jobs:
       - name: Build and deploy
         run: |
           npm run build
-          echo 'vue-test' > dist/CNAME
+          echo 'daydream-improv' > dist/CNAME
         env:
-          BASE_URL: '/vue-test/'  # Adjust this based on your repository name
+          BASE_URL: '/daydream-improv/'  # Adjust this based on your repository name
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
