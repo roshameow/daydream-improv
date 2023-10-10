@@ -24,6 +24,7 @@
   margin-left: 1rem;
 }
 
+
 i {
   display: flex;
   place-items: center;

@@ -45,3 +45,6 @@ import SupportIcon from "../icons/IconSupport.vue";
     </ActivityItem>
   </main>
 </template>
+
+
+
