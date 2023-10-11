@@ -230,13 +230,15 @@ table td.noted {
 }
 
 table td.noted::after {
-  content: "\00B7"; /* Unicode character for middle dot */
-  position: absolute; /* Position the dot absolutely */
-  bottom: -0.6em; /* Adjust the position to place the dot under the text */
+  content: "";
+  position: absolute;
+  bottom: 0.3em; /* Adjust the position to place the dot under the text */
   left: 50%; /* Center the dot under the text */
   transform: translateX(-50%); /* Center the dot precisely under the text */
-  font-size: 3.5em; /* Adjust the font size to make the dot bigger */
-  color: #2196f3; /* Applying the decent green color to an element */
+  width: 0.4em; /* Adjust the width and height to control the dot size */
+  height: 0.4em;
+  background-color: #2196f3; /* Applying the decent green color to the dot */
+  border-radius: 50%; /* Ensure the dot is a circle */
 }
 
 table td.hide {
