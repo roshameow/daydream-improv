@@ -167,7 +167,7 @@ export default {
         this.selectedDate = new Date(this.year, this.month, day_object.day);
         this.$router.push("/noactivity"); // Navigate to the specified route
         const formattedDate = `/${this.year}-${this.month + 1}-${day_object.day}`;
-        if(day_object.isNoted) {
+        if (day_object.isNoted) {
           this.$router.push(formattedDate); // Navigate to the specified route
         } else {
           // console.error("Error navigating to the specified route:", error);
@@ -225,10 +225,14 @@ table td.today {
   color: #2196f3;
 }
 
+table td.noted {
+  position: relative; /* Make the span position relative */
+}
+
 table td.noted::after {
   content: "\00B7"; /* Unicode character for middle dot */
   position: absolute; /* Position the dot absolutely */
-  bottom: -28px; /* Adjust the position to place the dot under the text */
+  bottom: -0.6em; /* Adjust the position to place the dot under the text */
   left: 50%; /* Center the dot under the text */
   transform: translateX(-50%); /* Center the dot precisely under the text */
   font-size: 3.5em; /* Adjust the font size to make the dot bigger */
@@ -249,10 +253,10 @@ table td.active {
   border-radius: 15px; /* Adjust the border-radius to control the roundness of corners */
   color: #fff;
 }
-
-table td.noted {
-  position: relative; /* Make the span position relative */
-  /* background-color: lightgreen; */
-  /* color: #fff; */
+table td.active:hover{ /*table td.active:hover selector has higher specificity than just table td.active.*/
+  background-color: #2196f3;
+  border-radius: 15px; /* Adjust the border-radius to control the roundness of corners */
+  color: #fff;
 }
+
 </style>
