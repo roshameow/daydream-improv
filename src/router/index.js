@@ -6,7 +6,7 @@ import PersonCard from '../components/CardHover.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '',
     name: 'home',
     component: HomeView
   },

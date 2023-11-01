@@ -6,24 +6,25 @@ import Card from "./components/CardCarousel.vue";
 </script>
 
 <template>
-    <div id="app">
-<!-- 
+    <!-- <div id="app"> -->
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-  </header> -->
-  <!-- <Card /> -->
-
-  <div class="wrapper">
-      <!-- <HelloWorld msg="You did it!" /> -->
-
-      <nav>
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
+    <nav>
         <RouterLink to="/agenda">活动日历</RouterLink>
         <RouterLink to="/activitycard">活动记录</RouterLink>
         <RouterLink to="/about">联系方式</RouterLink>
       </nav>
-        <RouterView />
-    </div> 
-</div> 
+  </header> 
+  <!-- <Card /> -->
+
+  <!-- <div class="wrapper"> -->
+      <!-- <HelloWorld msg="You did it!" /> -->
+
+
+    <!-- </div>  -->
+    <RouterView />
+
+<!-- </div>  -->
 
 </template>
 
