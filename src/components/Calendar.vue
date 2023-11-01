@@ -92,9 +92,12 @@ export default {
             day = 1;
             isInCurrentMonth = !isInCurrentMonth;
           }
-          const formattedDate = `/${this.year}-${this.month + 1}-${day}`;
           // Check if the route exists
-          const routeExists = this.$router.options.routes.some((route) => {
+          const formattedDate = `${this.year}-${this.month + 1}-${day}`;
+          const agendaRoute = this.$router.options.routes.find(
+            (route) => route.path === "/agenda"
+          ); // Add the children routes to the 'agenda'
+          const routeExists = agendaRoute.children.some((route) => {
             return route.path === formattedDate;
           });
           week.push({
@@ -155,23 +158,18 @@ export default {
       );
     },
     isNotedDay(day_object) {
-      const formattedDate = `/${this.year}-${this.month + 1}-${day_object.day}`;
-      // Check if the route exists
-      const routeExists = this.$router.options.routes.some((route) => {
-        return route.path === formattedDate;
-      });
       return day_object.isNoted && day_object.isInCurrentMonth;
     },
     selectDate(day_object) {
       if (day_object.isInCurrentMonth) {
         this.selectedDate = new Date(this.year, this.month, day_object.day);
-        this.$router.push("/noactivity"); // Navigate to the specified route
-        const formattedDate = `/${this.year}-${this.month + 1}-${day_object.day}`;
+        this.$router.push("/agenda/noactivity"); // Navigate to the specified route
+        const formattedDate = `${this.year}-${this.month + 1}-${day_object.day}`;
         if (day_object.isNoted) {
-          this.$router.push(formattedDate); // Navigate to the specified route
+          this.$router.push(`/agenda/${formattedDate}`); // Navigate to the specified route
         } else {
           // console.error("Error navigating to the specified route:", error);
-          this.$router.push("/noactivity"); // Navigate to the specified route
+          this.$router.push("/agenda/noactivity"); // Navigate to the specified route
           // Optionally handle the error, e.g., show a user-friendly message
         }
       }
@@ -255,10 +253,10 @@ table td.active {
   border-radius: 15px; /* Adjust the border-radius to control the roundness of corners */
   color: #fff;
 }
-table td.active:hover{ /*table td.active:hover selector has higher specificity than just table td.active.*/
+table td.active:hover {
+  /*table td.active:hover selector has higher specificity than just table td.active.*/
   background-color: #2196f3;
   border-radius: 15px; /* Adjust the border-radius to control the roundness of corners */
   color: #fff;
 }
-
 </style>

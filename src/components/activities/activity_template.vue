@@ -1,4 +1,9 @@
+<script setup>
+import Calendar from "../Calendar.vue";
+</script>
+
 <template>
+
   <div class="item">
     <i>
       <slot name="icon"></slot>

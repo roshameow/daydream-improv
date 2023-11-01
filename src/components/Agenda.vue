@@ -1,33 +1,33 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
-// import Sidebar from "./components/Sidebar.vue";
-import Card from "./components/CardCarousel.vue";
-</script>
-
 <template>
-    <div id="app">
-<!-- 
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-  </header> -->
-  <!-- <Card /> -->
-
-  <div class="wrapper">
-      <!-- <HelloWorld msg="You did it!" /> -->
-
-      <nav>
-        <RouterLink to="/agenda">活动日历</RouterLink>
-        <RouterLink to="/activitycard">活动记录</RouterLink>
-        <RouterLink to="/about">联系方式</RouterLink>
-      </nav>
-        <RouterView />
-    </div> 
-</div> 
-
+  <div id="web_adapt">
+    <header>
+      <div class="sidebar">
+        <!-- Sidebar content -->
+        <Calendar />
+      </div>
+    </header>
+    <div class="activity">
+      <!-- Activity content -->
+      <RouterView />
+    </div>
+  </div>
 </template>
 
+<script>
+import Calendar from "./Calendar.vue";
+
+export default {
+  components: {
+    Calendar,
+  },
+};
+</script>
+
 <style scoped>
+/* Add styles for the sidebar if needed */
+.sidebar {
+  /* Add styles for the sidebar container */
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -63,6 +63,7 @@ nav a:first-of-type {
   border: 0;
 }
 
+
 @media (min-width: 1024px) {
   header {
     display: flex;
@@ -87,6 +88,16 @@ nav a:first-of-type {
 
     padding: 1rem 0;
     margin-top: 1rem;
+  }
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #web_adapt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
   }
 }
 </style>
