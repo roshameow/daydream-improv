@@ -7,14 +7,14 @@ import Card from "./components/CardCarousel.vue";
 
 <template>
     <!-- <div id="app"> -->
-  <header>
+  <!-- <header> -->
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-    <nav>
+    <!-- <nav>
         <RouterLink to="/agenda">活动日历</RouterLink>
         <RouterLink to="/activitycard">活动记录</RouterLink>
         <RouterLink to="/about">联系方式</RouterLink>
-      </nav>
-  </header> 
+      </nav> -->
+  <!-- </header>  -->
   <!-- <Card /> -->
 
   <!-- <div class="wrapper"> -->

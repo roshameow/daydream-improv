@@ -67,10 +67,10 @@ const agendaRoute = routes.find(route => route.path === '/agenda'); // Add the c
 agendaRoute.children = agendaRoute.children.concat(agendaChildren);
 
 //push 404 pages' routes
-// routes.push({
-//   path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
-//   component: HomeView,
-// });
+routes.push({
+  path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
+  component: HomeView,
+});
 
 const router = createRouter({
   mode: 'hash',
