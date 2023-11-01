@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 // import Sidebar from "./components/Sidebar.vue";
-import Card from "./components/CardCarousel.vue";
+// import Card from "./components/CardCarousel.vue";
 </script>
 
 <template>
