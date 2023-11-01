@@ -8,8 +8,7 @@ import SupportIcon from "../icons/IconSupport.vue";
 </script>
 
 <template>
-
-  <WelcomeItem>
+  <ActivityItem>
     <template #icon>
       <SupportIcon />
     </template>
@@ -17,5 +16,5 @@ import SupportIcon from "../icons/IconSupport.vue";
 
     A Warm Welcome from Daydream Imporv
     <a href="https://b23.tv/ix5EZmp" target="_blank" rel="noopener">视频</a>.
-  </WelcomeItem>
+  </ActivityItem>
 </template>

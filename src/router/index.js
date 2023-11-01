@@ -6,9 +6,8 @@ import PersonCard from '../components/CardHover.vue'
 
 const routes = [
   {
-    path: '',
-    name: 'home',
-    component: HomeView
+    path: '/',
+    component: HomeView,
   },
   {
     path: '/about',
@@ -67,7 +66,14 @@ Object.keys(requireComponent).forEach(fileName => {
 const agendaRoute = routes.find(route => route.path === '/agenda'); // Add the children routes to the 'agenda' 
 agendaRoute.children = agendaRoute.children.concat(agendaChildren);
 
+//push 404 pages' routes
+// routes.push({
+//   path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
+//   component: HomeView,
+// });
+
 const router = createRouter({
+  mode: 'hash',
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   // 添加404页面配置
@@ -76,5 +82,16 @@ const router = createRouter({
     return { x: 0, y: 0 }
   },
 })
+
+router.beforeEach((to, from, next) => {
+  // 检测是否发生 404 错误
+  if (to.matched.length === 0) {
+    // 取消导航，返回上一层路由
+    next(false);
+  } else {
+    // 继续路由导航
+    next();
+  }
+});
 
 export default router
