@@ -97,7 +97,7 @@ nav a:first-of-type {
   #web_adapt {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
   }
 }
 </style>
