@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path: '/about',
-    name: 'about',
+    // name: 'about',
     // route level code-splitting
     // this generates a separate chunk (About.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -19,7 +19,7 @@ const routes = [
   },
   {
     path: '/agenda',
-    name: 'agenda',
+    // name: 'agenda',
     component: Agenda,
     children: [{
       path: '', //default page
@@ -30,18 +30,18 @@ const routes = [
       }, 
       {
         path: 'noactivity',
-        name: 'noactivity',
+        // name: 'noactivity',
         component: () => import('../components/activities/NoActivity.vue')
       },]
   },
   {
     path: '/activitycard',
-    name: 'activitycard',
+    // name: 'activitycard',
     component: ActivityCard
   },
   {
     path: '/personcard',
-    name: 'personcard',
+    // name: 'personcard',
     component: PersonCard
   },
 
@@ -60,7 +60,7 @@ Object.keys(requireComponent).forEach(fileName => {
   agendaChildren.push({
     path: `${componentName}`,
     component: importComponent,
-    name: componentName
+    // name: componentName
   });
 });
 const agendaRoute = routes.find(route => route.path === '/agenda'); // Add the children routes to the 'agenda' 

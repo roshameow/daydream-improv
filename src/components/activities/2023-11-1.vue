@@ -77,7 +77,6 @@ import SupportIcon from "../icons/IconSupport.vue";
             </li>
           </ul>
         </li>
-
       </ul>
     </ActivityItem>
 
