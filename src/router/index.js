@@ -27,12 +27,12 @@ const routes = [
       // component: HomeView
       component: () => import('../components/activities/TheWelcome.vue')
 
-      }, 
-      {
-        path: 'noactivity',
-        // name: 'noactivity',
-        component: () => import('../components/activities/NoActivity.vue')
-      },]
+    },
+    {
+      path: 'noactivity',
+      // name: 'noactivity',
+      component: () => import('../components/activities/NoActivity.vue')
+    },]
   },
   {
     path: '/activitycard',
@@ -44,7 +44,10 @@ const routes = [
     // name: 'personcard',
     component: PersonCard
   },
-
+  { //push 404 pages' routes
+    path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
+    component: HomeView,
+  },
 ];
 
 //put activities pages' routes
@@ -66,11 +69,7 @@ Object.keys(requireComponent).forEach(fileName => {
 const agendaRoute = routes.find(route => route.path === '/agenda'); // Add the children routes to the 'agenda' 
 agendaRoute.children = agendaRoute.children.concat(agendaChildren);
 
-//push 404 pages' routes
-routes.push({
-  path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
-  component: HomeView,
-});
+
 
 const router = createRouter({
   mode: 'hash',
