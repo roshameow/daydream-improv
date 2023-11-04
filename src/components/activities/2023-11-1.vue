@@ -85,36 +85,32 @@ import SupportIcon from "../icons/IconSupport.vue";
         <SupportIcon />
       </template>
       <template #heading>视频记录</template>
-
-      <iframe
-        src="//player.bilibili.com/player.html?aid=407996231&bvid=BV1RG411X7YS&cid=1320515818&p=1"
-        scrolling="no"
-        border="0"
-        frameborder="no"
-        framespacing="0"
-        allowfullscreen="true"
-      >
-      </iframe>
-
-      <iframe
-        src="//player.bilibili.com/player.html?aid=962891799&bvid=BV1YH4y1z7wZ&cid=1320519760&p=1"
-        scrolling="no"
-        border="0"
-        frameborder="no"
-        framespacing="0"
-        allowfullscreen="true"
-      >
-      </iframe>
-
-      <iframe
-        src="//player.bilibili.com/player.html?aid=747891539&bvid=BV1jC4y1H7iE&cid=1320524181&p=1"
-        scrolling="no"
-        border="0"
-        frameborder="no"
-        framespacing="0"
-        allowfullscreen="true"
-      >
-      </iframe>
+      <ul>
+        <li>
+          <a
+            href="https://www.bilibili.com/video/BV1RG411X7YS/"
+            target="_blank"
+            rel="noopener"
+            >【How old am I-Viola Spolin的即兴剧场游戏-】</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.bilibili.com/video/BV1YH4y1z7wZ/"
+            target="_blank"
+            rel="noopener"
+            >【Who Game-Viola Spolin的即兴剧场游戏-】</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.bilibili.com/video/BV1jC4y1H7iE/"
+            target="_blank"
+            rel="noopener"
+            >【Where Game -Viola Spolin的即兴剧场游戏-】</a
+          >
+        </li>
+      </ul>
     </ActivityItem>
   </main>
 </template>
