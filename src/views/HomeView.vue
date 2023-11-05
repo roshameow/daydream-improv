@@ -1,29 +1,64 @@
 <template>
   <div class="home">
     <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-    <nav>
+      <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
+      <nav>
         <RouterLink to="/agenda">活动日历</RouterLink>
         <RouterLink to="/activitycard">活动记录</RouterLink>
         <RouterLink to="/about">联系方式</RouterLink>
       </nav>
-  </header> 
-    <h1>空想即兴</h1>
+    </header>
+    <div class="logo">
+      <div class="pic-block">
+        <img
+          alt="空想即兴"
+          class="logo_ch"
+          src="@/assets/logo_ch.svg"
+          width="225"
+          height="225"
+        />
+        <img
+          alt="DayDream Improv"
+          class="logo_en"
+          src="@/assets/logo_en_shape.svg"
+          width="225"
+          height="225"
+        />
+      </div>
+    </div>
+
+    <!-- <h1>空想即兴</h1> -->
   </div>
 </template>
 
 <style>
-  .home {
-
-  }
-  header {
-  line-height: 1.5;
-  max-height: 100vh;
+.home {
 }
 
 .logo {
-  display: block;
-  margin: 0 auto 2rem;
+  display: flex;
+  height: 35.3vh;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo .logo_ch {
+  height: 100%;
+}
+.logo .logo_en {
+  height: 50%;
+  position: absolute;
+  bottom: -4%;
+  left: 10%;
+}
+.pic-block {
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+}
+
+header {
+  line-height: 1.5;
+  max-height: 100vh;
 }
 
 nav {
