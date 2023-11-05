@@ -190,6 +190,7 @@ export default {
   justify-content: space-between;
   margin-bottom: 10px;
   font-size: 28px;
+  padding: 10px;
 }
 .month {
   font-weight: bold; /* Optionally, make the month text bold */
@@ -258,5 +259,11 @@ table td.active:hover {
   background-color: #2196f3;
   border-radius: 15px; /* Adjust the border-radius to control the roundness of corners */
   color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .calendar {
+    max-width: 30em;
+  }
 }
 </style>

@@ -1,9 +1,4 @@
-<script setup>
-import Calendar from "../Calendar.vue";
-</script>
-
 <template>
-
   <div class="item">
     <i>
       <slot name="icon"></slot>
@@ -13,6 +8,9 @@ import Calendar from "../Calendar.vue";
         <slot name="heading"></slot>
       </h3>
       <slot></slot>
+      <div class="show_iframe">
+        <slot name="video"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -28,6 +26,12 @@ import Calendar from "../Calendar.vue";
   flex: 1;
   margin-left: 1rem;
 }
+
+.details ul {
+  padding-left: 1em;
+  /* 设置左内边距为0，去掉默认的缩进 */
+}
+
 
 i {
   display: flex;
@@ -87,5 +91,6 @@ h3 {
   .item:last-of-type:after {
     display: none;
   }
+
 }
 </style>

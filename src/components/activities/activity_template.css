@@ -1,4 +1,21 @@
-ul {
-    padding-left: 1em; /* 设置左内边距为0，去掉默认的缩进 */
+.details ul {
+  padding-left: 1em;
+  /* 设置左内边距为0，去掉默认的缩进 */
+}
 
+
+.show_iframe iframe {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+
+  /*desktop screen show iframe instead of link*/
+  .show_iframe ul {
+    display: none;
   }
+
+  .show_iframe iframe {
+    display: inline-block;
+  }
+}
