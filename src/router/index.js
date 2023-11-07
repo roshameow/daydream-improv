@@ -44,7 +44,7 @@ const routes = [
     // name: 'personcard',
     component: PersonCard
   },
-  { //push 404 pages' routes
+  { //push NotFound pages' routes
     path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
     component: NotFoundView,
   },

@@ -28,18 +28,24 @@
   </div>
 </template>
 
+<script setup>
+import show_2013_07_04 from '@/assets/covers/show_2013_07_04.png' // => or relative path
+import acitivity_1 from '@/assets/covers/acitivity_1.jpg' // => or relative path
+
+</script>
+
 <script>
 export default {
   data() {
     return {
       cards: [
         {
-          frontImage: "src/assets/covers/show_2013_07_04.png",
+          frontImage: show_2013_07_04,
           backImage: "src/assets/covers/acitivity_1.jpg",
           frontface: true,
         },
         {
-          frontImage: "src/assets/covers/acitivity_1.jpg",
+          frontImage: acitivity_1,
           backImage: "src/assets/covers/show_2013_07_04.png",
           frontface: true,
         },
@@ -54,14 +60,14 @@ export default {
       //   this.activeCard = index;
       card.frontface = !card.frontface;
       //   this.$set(card, 'frontface', !card.frontface);
-      console.log(
-        "index",
-        index,
-        "card.frontface",
-        card.frontface,
-        "this.activeCard",
-        this.activeCard
-      );
+      // console.log(
+      //   "index",
+      //   index,
+      //   "card.frontface",
+      //   card.frontface,
+      //   "this.activeCard",
+      //   this.activeCard
+      // );
 
       //   this.cards[this.activeCard].frontface = !this.cards[this.activeCard].frontface;
     },
