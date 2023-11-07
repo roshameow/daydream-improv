@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 import Agenda from '../components/Agenda.vue'
 import ActivityCard from '../components/CardCarousel.vue'
 import PersonCard from '../components/CardHover.vue'
@@ -7,26 +8,15 @@ import PersonCard from '../components/CardHover.vue'
 const routes = [
   {
     path: '/',
-    // component: HomeView,
-    redirect: { name: 'Home' },
-  },
-  {
-    path: '/daydream-improv/',
-    name: 'Home',
     component: HomeView,
   },
   {
     path: '/about',
-    redirect: { name: 'about' },
-  },
-  {
-    path: '/daydream-improv/about',
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (About.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import('../views/AboutView.vue')
-  },
+    component: () => import('../views/AboutView.vue')  },
   {
     path: '/agenda',
     // name: 'agenda',
@@ -54,10 +44,10 @@ const routes = [
     // name: 'personcard',
     component: PersonCard
   },
-  // { //push 404 pages' routes
-  //   path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
-  //   component: HomeView,
-  // },
+  { //push 404 pages' routes
+    path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
+    component: NotFoundView,
+  },
 ];
 
 //put activities pages' routes
@@ -85,11 +75,6 @@ const router = createRouter({
   mode: 'history',
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-  // 添加404页面配置
-  // fallback: true,
-  // scrollBehavior(to, from, savedPosition) {
-  //   return { x: 0, y: 0 }
-  // },
 })
 
 router.beforeEach((to, from, next) => {
