@@ -2,11 +2,7 @@
   <div class="home">
     <header>
       <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-      <nav>
-        <RouterLink to="/agenda">活动日历</RouterLink>
-        <RouterLink to="/activitycard">活动记录</RouterLink>
-        <RouterLink to="/about">联系方式</RouterLink>
-      </nav>
+
     </header>
     <div class="logo">
       <div class="pic-block">
@@ -26,7 +22,11 @@
         />
       </div>
     </div>
-
+    <nav>
+        <RouterLink to="/agenda">活动日历</RouterLink>
+        <RouterLink to="/activitycard">活动记录</RouterLink>
+        <RouterLink to="/about">联系方式</RouterLink>
+      </nav>
     <!-- <h1>空想即兴</h1> -->
   </div>
 </template>
@@ -49,7 +49,18 @@
   position: absolute;
   bottom: -4%;
   left: 10%;
+  animation: slideUpDown 1s ease-in-out alternate;
 }
+
+@keyframes slideUpDown {
+  from {
+    transform: rotateX(180deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
 .pic-block {
   position: relative;
   height: 100%;

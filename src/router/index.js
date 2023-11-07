@@ -7,10 +7,17 @@ import PersonCard from '../components/CardHover.vue'
 const routes = [
   {
     path: '/',
+    // component: HomeView,
+
+    redirect: { name: 'Home' },
+  },
+  {
+    path: '/daydream-improv/',
+    name: 'Home',
     component: HomeView,
   },
   {
-    path: '/about',
+    path: '/daydream-improv/about',
     // name: 'about',
     // route level code-splitting
     // this generates a separate chunk (About.[hash].js) for this route
@@ -44,10 +51,10 @@ const routes = [
     // name: 'personcard',
     component: PersonCard
   },
-  { //push 404 pages' routes
-    path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
-    component: HomeView,
-  },
+  // { //push 404 pages' routes
+  //   path: '/:catchAll(.*)', // 使用正则表达式来匹配所有内容
+  //   component: HomeView,
+  // },
 ];
 
 //put activities pages' routes
@@ -72,14 +79,14 @@ agendaRoute.children = agendaRoute.children.concat(agendaChildren);
 
 
 const router = createRouter({
-  mode: 'hash',
+  mode: 'history',
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   // 添加404页面配置
-  fallback: true,
-  scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 }
-  },
+  // fallback: true,
+  // scrollBehavior(to, from, savedPosition) {
+  //   return { x: 0, y: 0 }
+  // },
 })
 
 router.beforeEach((to, from, next) => {
