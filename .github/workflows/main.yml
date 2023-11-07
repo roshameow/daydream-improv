@@ -25,6 +25,7 @@ jobs:
         run: |
           npm run build
           echo 'daydream-improv' > dist/CNAME
+          cp dist/index.html dist/404.html
         env:
           BASE_URL: '/daydream-improv/'  # Adjust this based on your repository name
 
