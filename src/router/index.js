@@ -17,7 +17,7 @@ const routes = [
   },
   {
     path: '/about',
-    component: () => import('../views/AboutView.vue')
+    redirect: { name: 'about' },
   },
   {
     path: '/daydream-improv/about',
