@@ -54,7 +54,7 @@ import SupportIcon from "../icons/IconSupport.vue";
               每位参与者根据他们被分配的年龄，表演出在公交车站等车时可能会有的特征、行为、言行或举止。
             </li>
           </ul>
-          我是谁：<font color="gray">出门在外，身份是自己给的</font><br />
+          我是谁：<span style="color: gray;">出门在外，身份是自己给的</span><br />
           <ul>
             <li>
               选择一位参与者作为“被猜身份”的人，其他参与者将讨论并给这位参与者设定一个虚构的身份
