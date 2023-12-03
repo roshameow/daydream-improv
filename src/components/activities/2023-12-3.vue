@@ -79,6 +79,15 @@ import SupportIcon from "../icons/IconSupport.vue";
       >
       》 通过记录一个由八名男性和八名女性组成的演员班级在纽约Neighborhood
       Playhouse上为期15个月的课程，展示了迈斯纳的教学过程。书中包含了迈斯纳对学生练习基础的直接记录。书中的内容涵盖了从最基本的练习到对当代美国戏剧的详细场景工作。
+      <br />《
+      <a
+        href="https://book.douban.com/subject/30461518/"
+        target="_blank"
+        rel="noopener"
+        >迈斯纳方法训练教程（套装上下册）</a
+      >
+      》 记录上海戏剧学院2016年进行的为期10天的迈斯纳方法工作坊，以课堂实录的形式还原讲座内容。
+
     </ActivityItem>
     <ActivityItem>
       <template #icon>
