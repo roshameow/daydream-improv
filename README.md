@@ -1,35 +1,23 @@
-# vue_test
+# Daydream Improv
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue 3 website for improv activities, with an agenda, activity cards and individual event pages.
 
-## Recommended IDE Setup
+## Project status
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+This repository preserves the 2023 site and its event content. Dates and activities are historical; they are not a current event schedule.
 
-## Customize configuration
+## Local development
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
+```bash
+npm ci
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
+```bash
 npm run build
+npm run test:unit -- --run
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Activity pages are in `src/components/activities/`, the landing page is in `src/views/HomeView.vue`, and routing is defined in `src/router/index.js`.
 
-```sh
-npm run test:unit
-```
+Dependencies are installed from `package-lock.json`; `node_modules/` is not source code and is no longer tracked. The existing commit history is retained.
